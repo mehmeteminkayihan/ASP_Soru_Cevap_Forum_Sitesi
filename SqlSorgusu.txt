@@ -1,0 +1,70 @@
+CREATE DATABASE AcDatabase ;
+
+CREATE TABLE Authorizations (
+    authorization_id INT PRIMARY KEY IDENTITY(1,1),
+    authorization_name VARCHAR(10)
+);
+
+CREATE TABLE Users (
+    user_id INT PRIMARY KEY IDENTITY(1,1),
+    user_nickname VARCHAR(50) NOT NULL,
+    user_email VARCHAR(256) NOT NULL,
+    user_password VARCHAR(256) NOT NULL,
+    registration_date DATETIME NOT NULL,
+    user_contract TINYINT,
+    authorization_id INT NOT NULL,
+    FOREIGN KEY (authorization_id) REFERENCES Authorizations(authorization_id)
+);
+
+CREATE TABLE User_details (
+    user_id INT NOT NULL,
+    display_name VARCHAR(50) NOT NULL,
+    user_about NVARCHAR(MAX),
+    number_of_questions INT DEFAULT 0,
+    number_of_answers INT DEFAULT 0,
+    country VARCHAR(50),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+CREATE TABLE Company_information (
+   
+    company_about NVARCHAR(MAX),
+    company_phonenumber VARCHAR(25) NOT NULL,
+    company_email VARCHAR(255) NOT NULL,
+    company_address VARCHAR(255) NOT NULL,
+    privacy_policy NVARCHAR(MAX) NOT NULL,
+    
+);
+
+CREATE TABLE Questions (
+    questions_id INT PRIMARY KEY IDENTITY(1,1),
+    user_id INT NOT NULL,
+    question_title NVARCHAR(MAX) NOT NULL,
+    questions NVARCHAR(MAX) NOT NULL,
+    question_date DATETIME NOT NULL,
+    total_responses_received INT DEFAULT 0,
+
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+);
+
+CREATE TABLE Answers (
+    answer_id INT PRIMARY KEY IDENTITY(1,1),
+    questions_id INT NOT NULL,
+    user_id INT NOT NULL,
+    answer NVARCHAR(MAX) NOT NULL,
+    answer_date DATETIME NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (questions_id) REFERENCES Questions(questions_id)
+);
+
+
+
+INSERT INTO Authorizations (authorization_name) 
+VALUES 
+('admin'),
+('kullanıcı');
+
+INSERT INTO Users (user_nickname,user_email,user_password,registration_date,user_contract,authorization_id) 
+VALUES ('ada','ada@gmail.com','ada123','2023-12-17',1,1);
+
+

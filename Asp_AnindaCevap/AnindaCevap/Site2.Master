@@ -1,0 +1,214 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="AnindaCevap.Site2" %>
+
+<!doctype html>
+<html lang="zxx">
+<head>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Links Of CSS File -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/remixicon.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/metismenu.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/editor.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    
+    <!-- Title -->
+    <title>Anında Cevap</title>
+</head>
+<body>
+    <!-- Start Preloader Area -->
+    <div class="preloader" id="loader-style">
+        <div class="preloader-wrap">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!-- End Preloader Area -->
+    <div class="col-lg-6">
+
+   
+
+    </div>
+    <!-- Start Navbar Area --> 
+    <div class="navbar-area">
+        <div class="mobile-responsive-nav">
+            <div class="container">
+                <div class="mobile-responsive-menu">
+                    <div class="logo">
+                        <a href="index.aspx">
+                            <img src="assets/images/logo.png" alt="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="desktop-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item">
+                                <a href="index.aspx" class="nav-link active">
+                                    Ana Sayfa
+                                </a>
+                            </li>
+                            <li class="nav-item" id="userProfileNavItem" runat="server">
+                                <a href="user_profile.aspx" class="nav-link">
+                                    Faaliyetler
+                                </a>
+                            </li>
+                            
+                            
+                        </ul>
+                        <div class="others-options">
+                            <ul>
+                                <li id="logoutLink" runat="server">
+                                    <a href="logout.aspx">
+                                         Çıkış Yap
+                                    </a>
+                                </li>                               
+                                <li id="loginLink" runat="server" >
+                                    <a href="login.aspx">
+                                        Giriş Yap
+                                    </a>
+                                </li>
+                                 <li id="registerLink" runat="server">
+                                    <a href="register.aspx" >
+                                        Kayıt Ol
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="others-option-for-responsive">
+            <div class="container">
+                <div class="dot-menu">
+                    <div class="inner">
+                        <div class="circle circle-one"></div>
+                        <div class="circle circle-two"></div>
+                        <div class="circle circle-three"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Navbar Area -->
+
+    <asp:Label ID="userNicknameLabel" runat="server"></asp:Label>
+
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+     </asp:ContentPlaceHolder>
+
+    <!-- Start Footer Area -->
+		<div class="footer-area pt-100 pb-70">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-sm-6">
+						<div class="single-footer-widget style-two">
+							<a href="index.aspx">
+								<img src="assets/images/logo.png" width="100px" alt="Image">
+							</a>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-sm-8">
+						<div class="single-footer-widget style-two ml-15">
+							<h3>Şirket
+							</h3>
+
+							<ul class="import-link">
+								<li>
+									<a href="about.aspx">Hakkımızda</a>
+								</li>
+								
+							
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-sm-6">
+						<div class="single-footer-widget style-two">
+							<h3>Keşfedin</h3>
+
+							<ul class="import-link">
+																
+								<li>
+									<a href="privacy_policy.aspx">Gizlilik Politikası</a>
+								</li>
+							
+							</ul>
+						</div>
+					</div>
+
+					
+
+					<div class="col-lg-3 col-sm-6">
+						<div class="single-footer-widget style-two">
+							<h3>İletişime Geç</h3>
+
+							<ul class="address-link">
+								<li>
+									<span>Telefon:</span>
+									 <asp:Label ID="lblPhone" runat="server" Text="Label"></asp:Label>
+								</li>
+								<li>
+									<span>Email:</span>
+									<asp:Label ID="lblEmail" runat="server" Text="Label"></asp:Label>
+								</li>
+								<li>
+									<span>Adres:</span>
+									<asp:Label ID="lblAdres" runat="server" Text="Label"></asp:Label>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-shape">
+				<img src="assets/images/footer-shape.png" width="200px" alt="Image">
+			</div>
+		</div>
+		<!-- End Footer Area -->
+
+		<!-- Start Go Top Area -->
+		<div class="go-top">
+			<i class="ri-arrow-up-s-fill"></i>
+			<i class="ri-arrow-up-s-fill"></i>
+		</div>
+		<!-- End Go Top Area -->
+
+        <!-- Links of JS File -->
+        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+		<script src="assets/js/meanmenu.min.js"></script>
+		<script src="assets/js/owl.carousel.min.js"></script>
+		<script src="assets/js/form-validator.min.js"></script>
+		<script src="assets/js/contact-form-script.js"></script>
+		<script src="assets/js/ajaxchimp.min.js"></script>
+		<script src="assets/js/metismenu.js"></script>
+		<script src="assets/js/editor.js"></script>
+		<script src="assets/js/like-dislike.min.js"></script>
+		<script src="assets/js/custom.js"></script>
+</body>
+</html>
